@@ -1,0 +1,65 @@
+.inp {
+  margin-left: 5px;
+  font-weight: 300;
+  margin-right: 50px;
+  padding: 7px 20px 7px 17px;
+  background-color: aliceblue;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  transition: all 0.5s;
+}
+
+.inp:hover {
+  cursor: pointer;
+}
+.inp:focus {
+  outline: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+label {
+  padding: 10px;
+  font-weight: 320;
+}
+.inp::placeholder {
+  font-size: small;
+  color: black;
+  opacity: 0.5;
+}
+
+#result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+#result button {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
+  color: black;
+  font-weight: 200;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+#result button:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.5);
+}
+#result button:active {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

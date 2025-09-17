@@ -1,0 +1,43 @@
+@-webkit-keyframes backgrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes backgrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes backgrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+html,
+body {
+  background: linear-gradient(270deg, #109be6, #e61041, #1046e6);
+  background-size: 600% 600%;
+
+  -webkit-animation: backgrad 30s ease infinite;
+  -moz-animation: backgrad 30s ease infinite;
+  animation: backgrad 30s ease infinite;
+}
