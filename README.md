@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# React Mini Projects
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of small React apps I built to practice and showcase different features.
 
-Currently, two official plugins are available:
+## What's Inside
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **BMI Calculator** - Calculate your body mass index
+- **Counter** - Simple increment/decrement counter
+- **Form Validation** - Email validation checker
+- **Pokédex** - Search for Pokémon info
+- **Random Joke** - Get Chuck Norris jokes
+- **Tic Tac Toe** - Classic game for two players
+- **Stopwatch** - Time tracking tool
+- **Weather** - Check current weather by location
+- **GitHub Users** - Search GitHub profiles
 
-## Expanding the ESLint configuration
+## How to Run
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone this repo
+2. Run `npm install`
+3. Add your weather API key to `.env` file:
+   ```
+   VITE_WEATHER_KEY=your_api_key_here
+   ```
+4. Run `npm run dev`
+5. Open your browser and explore!
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Built with React, TypeScript, and Vite. Just having fun with code! 🚀
