@@ -2,22 +2,24 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Spinner } from "react-bootstrap";
 import "../Style/animations.css";
 function Weather() {
-  const [apikey, setApiKey] = useState("");
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [country, setCountry] = useState("");
 
   useEffect(() => {
-    if (loading && apikey) {
+    if (loading) {
       fetchData();
     }
-  }, [loading, apikey]);
+  }, [loading]);
 
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=Pakistan`
+        `http://api.weatherapi.com/v1/current.json?key=${
+          import.meta.env.VITE_WEATHER_KEY
+        }&q=${country || "Pakistan"}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch weather data");
@@ -36,8 +38,8 @@ function Weather() {
 
   const handleClose = () => setShowModal(false);
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setApiKey(e.target.value);
+  const handleCountryInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCountry(e.target.value);
   };
 
   const load = () => {
@@ -74,7 +76,7 @@ function Weather() {
             className="lead"
             style={{ marginLeft: "10px", marginRight: "10px" }}
           >
-            Enter your API key to get the weather of Pakistan
+            Enter a country or city to get current weather information
           </p>
         </div>
       </div>
@@ -84,16 +86,17 @@ function Weather() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          flexDirection: "row",
         }}
       >
         <input
           type="text"
-          placeholder="Enter API Key"
+          placeholder="Enter country or city"
           className="inp"
-          onChange={handleInput}
+          onChange={handleCountryInput}
           style={{
             width: "80%",
-            maxWidth: "400px",
+            maxWidth: "300px",
             textAlign: "center",
             marginRight: "10px",
             paddingTop: "10px",
@@ -103,10 +106,9 @@ function Weather() {
         <button
           className="bt1"
           onClick={() => setLoading(true)}
-          disabled={!apikey}
-          style={{ borderRadius: "50px", width: "100px" }}
+          style={{ borderRadius: "50px", width: "150px" }}
         >
-          Check
+          Get Weather
         </button>
       </div>
       <div style={{ marginTop: "20px", textAlign: "center" }}>{load()}</div>
