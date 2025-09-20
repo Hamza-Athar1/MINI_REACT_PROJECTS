@@ -140,7 +140,7 @@ function Home() {
       </nav>
 
       {location.pathname === "/" && (
-        <div className={`fade-in`}>
+        <div className={`fade-in`} style={{ paddingTop: "80px" }}>
           <div className="jumbotron jumbotron-fluid">
             <div className="container-fluid">
               <h1 className="display-4">React Mini Projects</h1>
@@ -157,7 +157,9 @@ function Home() {
         </div>
       )}
 
-      <Outlet />
+      <div style={{ paddingTop: "80px" }}>
+        <Outlet />
+      </div>
     </div>
   );
 }
